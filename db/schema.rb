@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20170217233619) do
   create_table "garden_crops", force: :cascade do |t|
     t.text     "GardenName"
     t.text     "CropName"
+    t.date     "DatePlanted"
+    t.integer  "RowFeet"
     t.date     "DateHarvested"
     t.integer  "PoundsHarvested"
     t.datetime "created_at",      null: false
@@ -207,11 +209,6 @@ ActiveRecord::Schema.define(version: 20170217233619) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "UserID"
-    t.integer  "PersonalID"
-    t.text     "UserRole"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
