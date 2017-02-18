@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primaryrole:</strong>
+  <%= @organizational_primary_role.PrimaryRole %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @organizational_primary_role.Description %>
+</p>
+
+<%= link_to 'Edit', edit_organizational_primary_role_path(@organizational_primary_role) %> |
+<%= link_to 'Back', organizational_primary_roles_path %>

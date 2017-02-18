@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gardenname:</strong>
+  <%= @garden_inventory.GardenName %>
+</p>
+
+<p>
+  <strong>Toolname:</strong>
+  <%= @garden_inventory.ToolName %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @garden_inventory.Count %>
+</p>
+
+<%= link_to 'Edit', edit_garden_inventory_path(@garden_inventory) %> |
+<%= link_to 'Back', garden_inventories_path %>

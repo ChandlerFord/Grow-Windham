@@ -1,0 +1,29 @@
+<%= form_for(@garden_inventory) do |f| %>
+  <% if @garden_inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@garden_inventory.errors.count, "error") %> prohibited this garden_inventory from being saved:</h2>
+
+      <ul>
+      <% @garden_inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :GardenName %><br>
+    <%= f.text_area :GardenName %>
+  </div>
+  <div class="field">
+    <%= f.label :ToolName %><br>
+    <%= f.text_area :ToolName %>
+  </div>
+  <div class="field">
+    <%= f.label :Count %><br>
+    <%= f.number_field :Count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

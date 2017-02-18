@@ -1,0 +1,1 @@
+json.array! @people_person_types, partial: 'people_person_types/people_person_type', as: :people_person_type

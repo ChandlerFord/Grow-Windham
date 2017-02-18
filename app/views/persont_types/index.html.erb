@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Persont Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Persontype</th>
+      <th>Persontypedescription</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @persont_types.each do |persont_type| %>
+      <tr>
+        <td><%= persont_type.PersonType %></td>
+        <td><%= persont_type.PersonTypeDescription %></td>
+        <td><%= link_to 'Show', persont_type %></td>
+        <td><%= link_to 'Edit', edit_persont_type_path(persont_type) %></td>
+        <td><%= link_to 'Destroy', persont_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Persont type', new_persont_type_path %>

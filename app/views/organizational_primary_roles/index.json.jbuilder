@@ -1,0 +1,1 @@
+json.array! @organizational_primary_roles, partial: 'organizational_primary_roles/organizational_primary_role', as: :organizational_primary_role

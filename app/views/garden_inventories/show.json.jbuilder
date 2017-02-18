@@ -1,0 +1,1 @@
+json.partial! "garden_inventories/garden_inventory", garden_inventory: @garden_inventory

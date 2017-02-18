@@ -1,0 +1,1 @@
+json.partial! "crop_names/crop_name", crop_name: @crop_name

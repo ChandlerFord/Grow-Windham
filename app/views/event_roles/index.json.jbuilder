@@ -1,0 +1,1 @@
+json.array! @event_roles, partial: 'event_roles/event_role', as: :event_role

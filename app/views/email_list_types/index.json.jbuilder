@@ -1,0 +1,1 @@
+json.array! @email_list_types, partial: 'email_list_types/email_list_type', as: :email_list_type

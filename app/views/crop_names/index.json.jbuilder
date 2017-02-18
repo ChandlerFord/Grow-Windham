@@ -1,0 +1,1 @@
+json.array! @crop_names, partial: 'crop_names/crop_name', as: :crop_name

@@ -1,0 +1,1 @@
+json.array! @garden_crops, partial: 'garden_crops/garden_crop', as: :garden_crop

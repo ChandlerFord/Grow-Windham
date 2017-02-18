@@ -1,0 +1,1 @@
+json.array! @how_givens, partial: 'how_givens/how_given', as: :how_given

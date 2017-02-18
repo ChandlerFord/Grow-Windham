@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Organizational Primary Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primaryrole</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizational_primary_roles.each do |organizational_primary_role| %>
+      <tr>
+        <td><%= organizational_primary_role.PrimaryRole %></td>
+        <td><%= organizational_primary_role.Description %></td>
+        <td><%= link_to 'Show', organizational_primary_role %></td>
+        <td><%= link_to 'Edit', edit_organizational_primary_role_path(organizational_primary_role) %></td>
+        <td><%= link_to 'Destroy', organizational_primary_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organizational primary role', new_organizational_primary_role_path %>

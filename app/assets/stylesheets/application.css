@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.billboard	{
+		box-shadow:10px 10px 12px #888888;
+		width: 75%;
+		height:100%;
+		}
+
+body	{font-family: Centaur, "Century Gothic", Arial;
+			font-size: 16pt;
+			background-color: white;
+			}
+			
+p		{margin-left: 180pt;
+		margin-right: 10pt;
+		text-align: left;}
+		
+a		{text-decoration: none;
+		color: black;}
+
+img		{border-color: transparent;
+		}
+
+
+table	{width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		border-color: black;
+		border-style: ridge;
+		border-width: 20px;}
+		
+		.menu	{text-align: center;
+				width: 60%;}
+				
+		.menuicon {width: 23%;
+				font-size: 25px;}
+		
+		.menupipe {width: 1%;}
+		
+th		{color: black;
+		background-color: white;}
+		
+tr.stripe	{background-color: maroon;}
+	 
+td.bolder	{font-weight: bold;}
+
+caption	{caption-side: bottom;
+		font-style: italic;}
+		
+		
+.menubar {
+    background-color: black;
+    color: black;
+}
+
+.show {display:block;}
+
+form {padding: 12px 16px;
+	text-align: center;
+	color: black;
+}
+
+.coaches {
+		margin-right:15%;
+		font-size: 120%;
+		line-height: 2.5 em;
+		}
+.historyimages{
+				display: inline-block;
+				text-align: center;
+				float: left;
+				clear: both;
+}
+
+.form	{	
+		position: absolute;
+		margin-left: 25%;
+		margin-right: 25%;
+		width: 50%;
+		}
+
+
+.recruit	{
+				display: inline-block;
+				text-align: left;
+				display: top;
+				clear: both;
+				margin: -40%;
+				vertical-align:top;
+				font-size: 23px;
+				
+				}
+.logo		{vertical-align: bottom;
+			width: -50%;
+			display: bottom;
+			text-align: right;}
+
+#roster 		{text-align: center;
+			padding: 5px 50px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+			
+.title	{text-align: center;
+				color: white;}
+
+h1 {text-align:center}

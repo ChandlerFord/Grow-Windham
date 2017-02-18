@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Eventrole:</strong>
+  <%= @event_role.EventRole %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_role.Description %>
+</p>
+
+<%= link_to 'Edit', edit_event_role_path(@event_role) %> |
+<%= link_to 'Back', event_roles_path %>

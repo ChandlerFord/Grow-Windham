@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Programname:</strong>
+  <%= @program.ProgramName %>
+</p>
+
+<p>
+  <strong>Programstartdate:</strong>
+  <%= @program.ProgramStartDate %>
+</p>
+
+<p>
+  <strong>Programenddate:</strong>
+  <%= @program.ProgramEndDate %>
+</p>
+
+<p>
+  <strong>Programdescription:</strong>
+  <%= @program.ProgramDescription %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

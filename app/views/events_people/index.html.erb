@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Events People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personalid</th>
+      <th>Eventname</th>
+      <th>Eventdate</th>
+      <th>Hoursworked</th>
+      <th>Eventrole</th>
+      <th>Organizationname</th>
+      <th>Suborganizationname</th>
+      <th>Grade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events_people.each do |events_person| %>
+      <tr>
+        <td><%= events_person.PersonalID %></td>
+        <td><%= events_person.EventName %></td>
+        <td><%= events_person.EventDate %></td>
+        <td><%= events_person.HoursWorked %></td>
+        <td><%= events_person.EventRole %></td>
+        <td><%= events_person.OrganizationName %></td>
+        <td><%= events_person.SubOrganizationName %></td>
+        <td><%= events_person.Grade %></td>
+        <td><%= link_to 'Show', events_person %></td>
+        <td><%= link_to 'Edit', edit_events_person_path(events_person) %></td>
+        <td><%= link_to 'Destroy', events_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Events person', new_events_person_path %>

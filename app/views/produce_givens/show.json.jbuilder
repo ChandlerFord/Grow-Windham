@@ -1,0 +1,1 @@
+json.partial! "produce_givens/produce_given", produce_given: @produce_given

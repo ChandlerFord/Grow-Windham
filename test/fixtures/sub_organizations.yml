@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  OrganizationName: MyText
+  SubOrganizationName: MyText
+  Description: MyText
+
+two:
+  OrganizationName: MyText
+  SubOrganizationName: MyText
+  Description: MyText

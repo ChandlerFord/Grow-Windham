@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personalid:</strong>
+  <%= @people_organization.PersonalID %>
+</p>
+
+<p>
+  <strong>Organizationname:</strong>
+  <%= @people_organization.OrganizationName %>
+</p>
+
+<%= link_to 'Edit', edit_people_organization_path(@people_organization) %> |
+<%= link_to 'Back', people_organizations_path %>

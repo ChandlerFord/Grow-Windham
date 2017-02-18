@@ -1,0 +1,21 @@
+<%= form_for(@crop_name) do |f| %>
+  <% if @crop_name.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crop_name.errors.count, "error") %> prohibited this crop_name from being saved:</h2>
+
+      <ul>
+      <% @crop_name.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :CropName %><br>
+    <%= f.text_field :CropName %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Event Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Eventrole</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_roles.each do |event_role| %>
+      <tr>
+        <td><%= event_role.EventRole %></td>
+        <td><%= event_role.Description %></td>
+        <td><%= link_to 'Show', event_role %></td>
+        <td><%= link_to 'Edit', edit_event_role_path(event_role) %></td>
+        <td><%= link_to 'Destroy', event_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event role', new_event_role_path %>

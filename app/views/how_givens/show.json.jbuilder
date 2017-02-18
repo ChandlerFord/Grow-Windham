@@ -1,0 +1,1 @@
+json.partial! "how_givens/how_given", how_given: @how_given

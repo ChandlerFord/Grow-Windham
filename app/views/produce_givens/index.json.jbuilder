@@ -1,0 +1,1 @@
+json.array! @produce_givens, partial: 'produce_givens/produce_given', as: :produce_given

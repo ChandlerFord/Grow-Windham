@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cropname:</strong>
+  <%= @produce_given.CropName %>
+</p>
+
+<p>
+  <strong>Dategive:</strong>
+  <%= @produce_given.DateGive %>
+</p>
+
+<p>
+  <strong>Howgiven:</strong>
+  <%= @produce_given.HowGiven %>
+</p>
+
+<p>
+  <strong>Poundsgiven:</strong>
+  <%= @produce_given.PoundsGiven %>
+</p>
+
+<p>
+  <strong>Valuegiven:</strong>
+  <%= @produce_given.ValueGiven %>
+</p>
+
+<%= link_to 'Edit', edit_produce_given_path(@produce_given) %> |
+<%= link_to 'Back', produce_givens_path %>

@@ -1,0 +1,1 @@
+json.partial! "tool_names/tool_name", tool_name: @tool_name

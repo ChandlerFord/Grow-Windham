@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personalid:</strong>
+  <%= @events_person.PersonalID %>
+</p>
+
+<p>
+  <strong>Eventname:</strong>
+  <%= @events_person.EventName %>
+</p>
+
+<p>
+  <strong>Eventdate:</strong>
+  <%= @events_person.EventDate %>
+</p>
+
+<p>
+  <strong>Hoursworked:</strong>
+  <%= @events_person.HoursWorked %>
+</p>
+
+<p>
+  <strong>Eventrole:</strong>
+  <%= @events_person.EventRole %>
+</p>
+
+<p>
+  <strong>Organizationname:</strong>
+  <%= @events_person.OrganizationName %>
+</p>
+
+<p>
+  <strong>Suborganizationname:</strong>
+  <%= @events_person.SubOrganizationName %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @events_person.Grade %>
+</p>
+
+<%= link_to 'Edit', edit_events_person_path(@events_person) %> |
+<%= link_to 'Back', events_people_path %>

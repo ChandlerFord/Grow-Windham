@@ -1,0 +1,25 @@
+<%= form_for(@persont_type) do |f| %>
+  <% if @persont_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@persont_type.errors.count, "error") %> prohibited this persont_type from being saved:</h2>
+
+      <ul>
+      <% @persont_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :PersonType %><br>
+    <%= f.text_area :PersonType %>
+  </div>
+  <div class="field">
+    <%= f.label :PersonTypeDescription %><br>
+    <%= f.text_area :PersonTypeDescription %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Programs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Programname</th>
+      <th>Programstartdate</th>
+      <th>Programenddate</th>
+      <th>Programdescription</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><%= program.ProgramName %></td>
+        <td><%= program.ProgramStartDate %></td>
+        <td><%= program.ProgramEndDate %></td>
+        <td><%= program.ProgramDescription %></td>
+        <td><%= link_to 'Show', program %></td>
+        <td><%= link_to 'Edit', edit_program_path(program) %></td>
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

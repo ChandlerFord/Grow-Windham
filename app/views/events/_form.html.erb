@@ -1,0 +1,57 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :EventName %><br>
+    <%= f.text_area :EventName %>
+  </div>
+  <div class="field">
+    <%= f.label :EventDate %><br>
+    <%= f.date_select :EventDate %>
+  </div>
+  <div class="field">
+    <%= f.label :EventStartTime %><br>
+    <%= f.time_select :EventStartTime %>
+  </div>
+  <div class="field">
+    <%= f.label :EventHours %><br>
+    <%= f.number_field :EventHours %>
+  </div>
+  <div class="field">
+    <%= f.label :Eventlocation %><br>
+    <%= f.text_area :Eventlocation %>
+  </div>
+  <div class="field">
+    <%= f.label :NumberAttended %><br>
+    <%= f.number_field :NumberAttended %>
+  </div>
+  <div class="field">
+    <%= f.label :ProgramName %><br>
+    <%= f.text_area :ProgramName %>
+  </div>
+  <div class="field">
+    <%= f.label :ProgramStartDate %><br>
+    <%= f.date_select :ProgramStartDate %>
+  </div>
+  <div class="field">
+    <%= f.label :GardenName %><br>
+    <%= f.text_area :GardenName %>
+  </div>
+  <div class="field">
+    <%= f.label :EventType %><br>
+    <%= f.text_area :EventType %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

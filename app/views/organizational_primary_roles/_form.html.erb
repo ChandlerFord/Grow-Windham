@@ -1,0 +1,25 @@
+<%= form_for(@organizational_primary_role) do |f| %>
+  <% if @organizational_primary_role.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organizational_primary_role.errors.count, "error") %> prohibited this organizational_primary_role from being saved:</h2>
+
+      <ul>
+      <% @organizational_primary_role.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :PrimaryRole %><br>
+    <%= f.text_field :PrimaryRole %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_field :Description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

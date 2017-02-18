@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GardenName: MyText
+  CropName: MyText
+  DateHarvested: 2017-02-17
+  PoundsHarvested: 1
+
+two:
+  GardenName: MyText
+  CropName: MyText
+  DateHarvested: 2017-02-17
+  PoundsHarvested: 1

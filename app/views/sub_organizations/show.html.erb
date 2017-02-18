@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organizationname:</strong>
+  <%= @sub_organization.OrganizationName %>
+</p>
+
+<p>
+  <strong>Suborganizationname:</strong>
+  <%= @sub_organization.SubOrganizationName %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sub_organization.Description %>
+</p>
+
+<%= link_to 'Edit', edit_sub_organization_path(@sub_organization) %> |
+<%= link_to 'Back', sub_organizations_path %>

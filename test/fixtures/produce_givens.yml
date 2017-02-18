@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  CropName: MyText
+  DateGive: 2017-02-17
+  HowGiven: MyText
+  PoundsGiven: 1
+  ValueGiven: 1
+
+two:
+  CropName: MyText
+  DateGive: 2017-02-17
+  HowGiven: MyText
+  PoundsGiven: 1
+  ValueGiven: 1

@@ -1,0 +1,33 @@
+<%= form_for(@garden_crop) do |f| %>
+  <% if @garden_crop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@garden_crop.errors.count, "error") %> prohibited this garden_crop from being saved:</h2>
+
+      <ul>
+      <% @garden_crop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :GardenName %><br>
+    <%= f.text_area :GardenName %>
+  </div>
+  <div class="field">
+    <%= f.label :CropName %><br>
+    <%= f.text_area :CropName %>
+  </div>
+  <div class="field">
+    <%= f.label :DateHarvested %><br>
+    <%= f.date_select :DateHarvested %>
+  </div>
+  <div class="field">
+    <%= f.label :PoundsHarvested %><br>
+    <%= f.number_field :PoundsHarvested %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

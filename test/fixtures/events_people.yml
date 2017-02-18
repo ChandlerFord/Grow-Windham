@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PersonalID: 1
+  EventName: MyText
+  EventDate: 2017-02-17
+  HoursWorked: 1
+  EventRole: MyText
+  OrganizationName: MyText
+  SubOrganizationName: MyText
+  Grade: MyText
+
+two:
+  PersonalID: 1
+  EventName: MyText
+  EventDate: 2017-02-17
+  HoursWorked: 1
+  EventRole: MyText
+  OrganizationName: MyText
+  SubOrganizationName: MyText
+  Grade: MyText

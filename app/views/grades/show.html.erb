@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @grade.Grade %>
+</p>
+
+<p>
+  <strong>Gradedescription:</strong>
+  <%= @grade.GradeDescription %>
+</p>
+
+<%= link_to 'Edit', edit_grade_path(@grade) %> |
+<%= link_to 'Back', grades_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GardenName: MyText
+  ToolName: MyText
+  Count: 1
+
+two:
+  GardenName: MyText
+  ToolName: MyText
+  Count: 1

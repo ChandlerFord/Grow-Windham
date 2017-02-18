@@ -1,0 +1,33 @@
+<%= form_for(@program) do |f| %>
+  <% if @program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% @program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ProgramName %><br>
+    <%= f.text_area :ProgramName %>
+  </div>
+  <div class="field">
+    <%= f.label :ProgramStartDate %><br>
+    <%= f.date_select :ProgramStartDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ProgramEndDate %><br>
+    <%= f.date_select :ProgramEndDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ProgramDescription %><br>
+    <%= f.text_area :ProgramDescription %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

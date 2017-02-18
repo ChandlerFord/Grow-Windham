@@ -1,0 +1,1 @@
+json.array! @tool_names, partial: 'tool_names/tool_name', as: :tool_name

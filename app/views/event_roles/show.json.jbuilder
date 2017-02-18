@@ -1,0 +1,1 @@
+json.partial! "event_roles/event_role", event_role: @event_role

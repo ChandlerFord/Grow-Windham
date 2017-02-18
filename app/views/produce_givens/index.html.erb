@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Produce Givens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cropname</th>
+      <th>Dategive</th>
+      <th>Howgiven</th>
+      <th>Poundsgiven</th>
+      <th>Valuegiven</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produce_givens.each do |produce_given| %>
+      <tr>
+        <td><%= produce_given.CropName %></td>
+        <td><%= produce_given.DateGive %></td>
+        <td><%= produce_given.HowGiven %></td>
+        <td><%= produce_given.PoundsGiven %></td>
+        <td><%= produce_given.ValueGiven %></td>
+        <td><%= link_to 'Show', produce_given %></td>
+        <td><%= link_to 'Edit', edit_produce_given_path(produce_given) %></td>
+        <td><%= link_to 'Destroy', produce_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Produce given', new_produce_given_path %>

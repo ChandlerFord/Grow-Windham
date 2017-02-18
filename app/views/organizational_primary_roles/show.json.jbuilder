@@ -1,0 +1,1 @@
+json.partial! "organizational_primary_roles/organizational_primary_role", organizational_primary_role: @organizational_primary_role

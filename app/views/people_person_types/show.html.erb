@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personalid:</strong>
+  <%= @people_person_type.PersonalID %>
+</p>
+
+<p>
+  <strong>Persontype:</strong>
+  <%= @people_person_type.PersonType %>
+</p>
+
+<%= link_to 'Edit', edit_people_person_type_path(@people_person_type) %> |
+<%= link_to 'Back', people_person_types_path %>

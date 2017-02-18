@@ -1,0 +1,1 @@
+json.array! @persont_types, partial: 'persont_types/persont_type', as: :persont_type

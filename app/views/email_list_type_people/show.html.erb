@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personalid:</strong>
+  <%= @email_list_type_person.PersonalID %>
+</p>
+
+<p>
+  <strong>Emaillisttype:</strong>
+  <%= @email_list_type_person.EmailListType %>
+</p>
+
+<%= link_to 'Edit', edit_email_list_type_person_path(@email_list_type_person) %> |
+<%= link_to 'Back', email_list_type_people_path %>

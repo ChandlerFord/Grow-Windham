@@ -1,0 +1,1 @@
+json.partial! "people_organizations/people_organization", people_organization: @people_organization

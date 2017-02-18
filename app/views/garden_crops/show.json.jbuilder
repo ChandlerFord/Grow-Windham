@@ -1,0 +1,1 @@
+json.partial! "garden_crops/garden_crop", garden_crop: @garden_crop

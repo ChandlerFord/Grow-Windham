@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gardenname:</strong>
+  <%= @garden_crop.GardenName %>
+</p>
+
+<p>
+  <strong>Cropname:</strong>
+  <%= @garden_crop.CropName %>
+</p>
+
+<p>
+  <strong>Dateharvested:</strong>
+  <%= @garden_crop.DateHarvested %>
+</p>
+
+<p>
+  <strong>Poundsharvested:</strong>
+  <%= @garden_crop.PoundsHarvested %>
+</p>
+
+<%= link_to 'Edit', edit_garden_crop_path(@garden_crop) %> |
+<%= link_to 'Back', garden_crops_path %>

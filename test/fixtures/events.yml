@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  EventName: MyText
+  EventDate: 2017-02-17
+  EventStartTime: 2017-02-17 17:22:42
+  EventHours: 1
+  Eventlocation: MyText
+  NumberAttended: 1
+  ProgramName: MyText
+  ProgramStartDate: 2017-02-17
+  GardenName: MyText
+  EventType: MyText
+
+two:
+  EventName: MyText
+  EventDate: 2017-02-17
+  EventStartTime: 2017-02-17 17:22:42
+  EventHours: 1
+  Eventlocation: MyText
+  NumberAttended: 1
+  ProgramName: MyText
+  ProgramStartDate: 2017-02-17
+  GardenName: MyText
+  EventType: MyText

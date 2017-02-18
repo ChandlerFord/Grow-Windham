@@ -1,0 +1,2 @@
+module GardenInventoriesHelper
+end

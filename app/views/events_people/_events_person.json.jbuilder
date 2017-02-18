@@ -1,0 +1,2 @@
+json.extract! events_person, :id, :PersonalID, :EventName, :EventDate, :HoursWorked, :EventRole, :OrganizationName, :SubOrganizationName, :Grade, :created_at, :updated_at
+json.url events_person_url(events_person, format: :json)

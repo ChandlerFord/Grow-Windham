@@ -1,0 +1,1 @@
+json.partial! "email_list_types/email_list_type", email_list_type: @email_list_type
