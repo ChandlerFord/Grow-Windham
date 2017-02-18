@@ -1,8 +1,8 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-      t.text :EventName, :primary_key => true
-      t.date :EventDate, :primary_key => true
+      t.text :EventName
+      t.date :EventDate
       t.time :EventStartTime
       t.integer :EventHours
       t.text :Eventlocation

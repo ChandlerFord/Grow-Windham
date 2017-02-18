@@ -3,7 +3,7 @@ class CreateGardenCrops < ActiveRecord::Migration
     create_table :garden_crops do |t|
       t.text :GardenName
       t.text :CropName
-      t.date :DatePlanted, :primary_key => true
+      t.date :DatePlanted
       t.integer :RowFeet
       t.date :DateHarvested
       t.integer :PoundsHarvested
