@@ -27,8 +27,17 @@ Rails.application.routes.draw do
   resources :crop_names
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root 'crop_names#new'
-  # You can have the root of your site routed with "root"
+#Redirect user if signed in or not
+devise_scope :user do
+  authenticated :user do
+    root 'crop_names#new', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
+# You can have the root of your site routed with "root"
   # root 'welcome#index'
 
   # Example of regular route:

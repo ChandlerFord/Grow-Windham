@@ -23,6 +23,7 @@
 body	{font-family: Centaur, "Century Gothic", Arial;
 			font-size: 16pt;
 			background-color: white;
+			text-align: center;
 			}
 			
 p		{margin-left: 180pt;
@@ -32,11 +33,22 @@ p		{margin-left: 180pt;
 a		{text-decoration: none;
 		color: black;}
 
+a:link, a:visited
+	{
+		color:black;
+	}
+
+a:hover
+	{
+		color:blue;
+		background-color: transparent;
+	}
+
 img		{border-color: transparent;
 		}
 
 
-table	{width: 60%;
+table	{width: 70%;
 		margin-left: auto;
 		margin-right: auto;
 		border-color: black;
@@ -52,10 +64,15 @@ table	{width: 60%;
 		.menupipe {width: 1%;}
 		
 th		{color: black;
-		background-color: white;}
+		background-color: #8FBC8F;
+}
+
+tbody{text-align: left}
 		
-tr.stripe	{background-color: maroon;}
-	 
+tr:nth-child(even) {
+  background-color: #e5e5e5;
+}
+
 td.bolder	{font-weight: bold;}
 
 caption	{caption-side: bottom;
@@ -115,6 +132,3 @@ form {padding: 12px 16px;
 			
 .title	{text-align: center;
 				color: white;}
-
-h1 {text-align:center}
-h2 {text-align:center}
