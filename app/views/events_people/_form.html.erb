@@ -12,36 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :PersonalID %><br>
-    <%= f.number_field :PersonalID %>
+    <%= f.label :PersonalID, "Personal Id" %><br>
+    <%= f.select :PersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :EventName %><br>
-    <%= f.text_area :EventName %>
+    <%= f.label :EventName, "Event Name" %><br>
+    <%= f.select :EventName, options_for_select(@events.map{ |c| [c.EventName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :EventDate %><br>
+    <%= f.label :EventDate, "Event Date"  %><br>
     <%= f.date_select :EventDate %>
   </div>
   <div class="field">
-    <%= f.label :HoursWorked %><br>
+    <%= f.label :HoursWorked, "Hours Worked" %><br>
     <%= f.number_field :HoursWorked %>
   </div>
   <div class="field">
-    <%= f.label :EventRole %><br>
-    <%= f.text_area :EventRole %>
+    <%= f.label :EventRole, "Event Role" %><br>
+    <%= f.select :EventRole, options_for_select(@event_roles.map{ |c| [c.EventRole] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :OrganizationName %><br>
-    <%= f.text_area :OrganizationName %>
+    <%= f.label :OrganizationName, "Organization Name" %><br>
+    <%= f.select :OrganizationName, options_for_select(@organizations.map{ |c| [c.OrganizationName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :SubOrganizationName %><br>
-    <%= f.text_area :SubOrganizationName %>
+    <%= f.label :SubOrganizationName, "Sub-Organization Name" %><br>
+    <%= f.select :SubOrganizationName, options_for_select(@sub_organizations.map{ |c| [c.SubOrganizationName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :Grade %><br>
-    <%= f.text_area :Grade %>
+    <%= f.label :Grade, "Grade" %><br>
+    <%= f.select :Grade, options_for_select(@grades.map{ |c| [c.Grade] }), {include_blank: true} %>
   </div>
   <div class="actions">
     <%= f.submit %>

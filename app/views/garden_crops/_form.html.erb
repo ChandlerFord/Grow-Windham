@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :GardenName %><br>
-    <%= f.text_area :GardenName %>
+    <%= f.label :GardenName, "Garden Name" %><br>
+    <%= f.select :GardenName, options_for_select(@gardens.map{ |c| [c.GardenName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :CropName %><br>
-    <%= f.text_area :CropName %>
+    <%= f.label :CropName, "Crop Name" %><br>
+    <%= f.select :CropName, options_for_select(@crop_names.map{ |c| [c.CropName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :DateHarvested %><br>
+    <%= f.label :DateHarvested, "Date Harvested" %><br>
     <%= f.date_select :DateHarvested %>
   </div>
   <div class="field">
-    <%= f.label :PoundsHarvested %><br>
+    <%= f.label :PoundsHarvested, "Pounds Harvested" %><br>
     <%= f.number_field :PoundsHarvested %>
   </div>
   <div class="actions">

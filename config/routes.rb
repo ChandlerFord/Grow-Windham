@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :resources
+  resources :resource_transactions
+  resources :resource_types
   resources :tool_names
   resources :organizational_primary_roles
   devise_for :users
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
   resources :email_list_type_people
   resources :email_list_types
   resources :crop_names
+  mount Adhoq::Engine => "/adhoq"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 #Redirect user if signed in or not

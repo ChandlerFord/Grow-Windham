@@ -56,7 +56,7 @@ class UserRolesController < ApplicationController
   def destroy
     @user_role.destroy
     respond_to do |format|
-      format.html { redirect_to user_roles_url, notice: 'User role was successfully destroyed.' }
+      format.html { redirect_to user_roles_url, notice: 'User role was successfully removed.' }
       format.json { head :no_content }
     end
   end

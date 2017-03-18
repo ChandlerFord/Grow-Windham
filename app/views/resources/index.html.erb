@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource Name</th>
+      <th>Transaction Date</th>
+      <th>Resource Type</th>
+      <th>Resource Transaction</th>
+      <th>Monetary Value</th>
+      <th>Non-monetary Value</th>
+      <th>Resource PersonalID</th>
+      <th>Resource Organization</th>
+      <th>Destination PersonalID</th>
+      <th>Destination Organization</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.ResourceName %></td>
+        <td><%= resource.TransactionDate %></td>
+        <td><%= resource.ResourceType %></td>
+        <td><%= resource.ResourceTransaction %></td>
+        <td><%= resource.MonetaryValue %></td>
+        <td><%= resource.NonMonetaryValue %></td>
+        <td><%= resource.ResourcePersonalID %></td>
+        <td><%= resource.ResourceOrganization %></td>
+        <td><%= resource.DestinationPersonalID %></td>
+        <td><%= resource.DestinationOrganization %></td>
+        <td><%= resource.Description %></td>
+        <td><%= link_to 'Show', resource %></td>
+        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resource', new_resource_path, :class => "btn btn-add" %>

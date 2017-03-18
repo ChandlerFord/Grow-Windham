@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :GardenName %><br>
-    <%= f.text_area :GardenName %>
+    <%= f.label :GardenName, "Garden Name" %><br>
+    <%= f.select :GardenName, options_for_select(@gardens.map{ |c| [c.GardenName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :ToolName %><br>
-    <%= f.text_area :ToolName %>
+    <%= f.label :ToolName, "Tool Name" %><br>
+    <%= f.select :ToolName, options_for_select(@tool_names.map{ |c| [c.ToolName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :Count %><br>
+    <%= f.label :Count, "Count" %><br>
     <%= f.number_field :Count %>
   </div>
   <div class="actions">

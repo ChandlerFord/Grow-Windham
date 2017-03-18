@@ -1,0 +1,1 @@
+json.partial! "resource_transactions/resource_transaction", resource_transaction: @resource_transaction

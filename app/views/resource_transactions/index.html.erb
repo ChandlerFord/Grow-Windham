@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resource Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource Transaction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resource_transactions.each do |resource_transaction| %>
+      <tr>
+        <td><%= resource_transaction.ResourceTransaction %></td>
+        <td><%= link_to 'Show', resource_transaction %></td>
+        <td><%= link_to 'Edit', edit_resource_transaction_path(resource_transaction) %></td>
+        <td><%= link_to 'Remove', resource_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resource transaction', new_resource_transaction_path, :class => "btn btn-add" %>

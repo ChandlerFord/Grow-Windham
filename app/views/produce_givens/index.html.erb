@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Cropname</th>
-      <th>Dategive</th>
-      <th>Howgiven</th>
-      <th>Poundsgiven</th>
-      <th>Valuegiven</th>
+      <th>Crop Name</th>
+      <th>Date Given</th>
+      <th>How Given</th>
+      <th>Pounds Given</th>
+      <th>Value Given</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,10 +21,10 @@
         <td><%= produce_given.DateGive %></td>
         <td><%= produce_given.HowGiven %></td>
         <td><%= produce_given.PoundsGiven %></td>
-        <td><%= produce_given.ValueGiven %></td>
+        <td>$<%= produce_given.ValueGiven %></td>
         <td><%= link_to 'Show', produce_given %></td>
         <td><%= link_to 'Edit', edit_produce_given_path(produce_given) %></td>
-        <td><%= link_to 'Destroy', produce_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', produce_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Produce given', new_produce_given_path %></button>
+<%= link_to 'New Produce given', new_produce_given_path, :class => "btn btn-add"%>

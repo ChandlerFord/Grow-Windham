@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ 
+@import "query-builder.default";
 
 .billboard	{
 		box-shadow:10px 10px 12px #888888;
@@ -28,7 +30,7 @@ body	{font-family: Centaur, "Century Gothic", Arial;
 			
 p		{margin-left: 180pt;
 		margin-right: 10pt;
-		text-align: left;}
+		}
 		
 a		{text-decoration: none;
 		color: black;}
@@ -132,3 +134,23 @@ form {padding: 12px 16px;
 			
 .title	{text-align: center;
 				color: white;}
+
+.btn-add { 
+  color: #000000; 
+  background-color: #8FBC8F; 
+  border-color: #000000; 
+} 
+.btn-add:hover, 
+.btn-add:focus, 
+.btn-add:active, 
+.btn-add.active, 
+.open .dropdown-toggle.btn-add { 
+  color: #000000; 
+  background-color: #597D59; 
+  border-color: #000000; 
+}
+
+.center {
+    margin:0 auto;
+    width:25%;
+}

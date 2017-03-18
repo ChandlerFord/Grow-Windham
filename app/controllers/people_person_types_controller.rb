@@ -15,10 +15,14 @@ class PeoplePersonTypesController < ApplicationController
   # GET /people_person_types/new
   def new
     @people_person_type = PeoplePersonType.new
+    @people = Person.all
+    @persont_types = PersontType.all
   end
 
   # GET /people_person_types/1/edit
   def edit
+    @people = Person.all
+    @persont_types = PersontType.all
   end
 
   # POST /people_person_types
@@ -56,7 +60,7 @@ class PeoplePersonTypesController < ApplicationController
   def destroy
     @people_person_type.destroy
     respond_to do |format|
-      format.html { redirect_to people_person_types_url, notice: 'People person type was successfully destroyed.' }
+      format.html { redirect_to people_person_types_url, notice: 'People person type was successfully removed.' }
       format.json { head :no_content }
     end
   end

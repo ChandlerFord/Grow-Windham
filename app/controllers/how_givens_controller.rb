@@ -56,7 +56,7 @@ class HowGivensController < ApplicationController
   def destroy
     @how_given.destroy
     respond_to do |format|
-      format.html { redirect_to how_givens_url, notice: 'How given was successfully destroyed.' }
+      format.html { redirect_to how_givens_url, notice: 'How given was successfully removed.' }
       format.json { head :no_content }
     end
   end

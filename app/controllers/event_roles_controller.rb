@@ -56,7 +56,7 @@ class EventRolesController < ApplicationController
   def destroy
     @event_role.destroy
     respond_to do |format|
-      format.html { redirect_to event_roles_url, notice: 'Event role was successfully destroyed.' }
+      format.html { redirect_to event_roles_url, notice: 'Event role was successfully removed.' }
       format.json { head :no_content }
     end
   end

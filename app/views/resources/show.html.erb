@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Resourcename:</strong>
+  <%= @resource.ResourceName %>
+</p>
+
+<p>
+  <strong>Transactiondate:</strong>
+  <%= @resource.TransactionDate %>
+</p>
+
+<p>
+  <strong>Resourcetype:</strong>
+  <%= @resource.ResourceType %>
+</p>
+
+<p>
+  <strong>Resourcetransaction:</strong>
+  <%= @resource.ResourceTransaction %>
+</p>
+
+<p>
+  <strong>Monetaryvalue:</strong>
+  <%= @resource.MonetaryValue %>
+</p>
+
+<p>
+  <strong>Nonmonetaryvalue:</strong>
+  <%= @resource.NonMonetaryValue %>
+</p>
+
+<p>
+  <strong>Resourcepersonalid:</strong>
+  <%= @resource.ResourcePersonalID %>
+</p>
+
+<p>
+  <strong>Resourceorganization:</strong>
+  <%= @resource.ResourceOrganization %>
+</p>
+
+<p>
+  <strong>Destinationpersonalid:</strong>
+  <%= @resource.DestinationPersonalID %>
+</p>
+
+<p>
+  <strong>Destinationorganization:</strong>
+  <%= @resource.DestinationOrganization %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @resource.Description %>
+</p>
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>

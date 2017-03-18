@@ -10,25 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :CropName %><br>
-    <%= f.text_area :CropName %>
+    <%= f.label :CropName, "Crop Name" %><br>
+    <%= f.select :CropName, options_for_select(@crop_names.map{ |c| [c.CropName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :DateGive %><br>
+    <%= f.label :DateGive, "Date Given" %><br>
     <%= f.date_select :DateGive %>
   </div>
   <div class="field">
-    <%= f.label :HowGiven %><br>
-    <%= f.text_area :HowGiven %>
+    <%= f.label :HowGiven, "How Given" %><br>
+    <%= f.select :HowGiven, options_for_select(@how_givens.map{ |c| [c.HowGiven] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :PoundsGiven %><br>
+    <%= f.label :PoundsGiven, "Pounds Given" %><br>
     <%= f.number_field :PoundsGiven %>
   </div>
   <div class="field">
-    <%= f.label :ValueGiven %><br>
+    <%= f.label :ValueGiven, "Value Given" %><br>
+    $
     <%= f.number_field :ValueGiven %>
   </div>
   <div class="actions">

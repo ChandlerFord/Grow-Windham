@@ -1,0 +1,21 @@
+<%= form_for(@resource_transaction) do |f| %>
+  <% if @resource_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource_transaction.errors.count, "error") %> prohibited this resource_transaction from being saved:</h2>
+
+      <ul>
+      <% @resource_transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ResourceTransaction %><br>
+    <%= f.text_area :ResourceTransaction %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

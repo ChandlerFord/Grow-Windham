@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :PersonalID %><br>
-    <%= f.number_field :PersonalID %>
+    <%= f.label :PersonalID, "Personal ID" %><br>
+    <%= f.select :PersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :OrganizationName %><br>
-    <%= f.text_area :OrganizationName %>
+    <%= f.label :OrganizationName, "Organization Name" %><br>
+    <%= f.select :OrganizationName, options_for_select(@organization.map{ |c| [c.OrganizationName] }), {include_blank: true} %>
   </div>
   <div class="actions">
     <%= f.submit %>

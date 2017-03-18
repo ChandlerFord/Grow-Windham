@@ -5,13 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Personalid</th>
-      <th>Eventname</th>
-      <th>Eventdate</th>
-      <th>Hoursworked</th>
-      <th>Eventrole</th>
-      <th>Organizationname</th>
-      <th>Suborganizationname</th>
+      <th>Personal ID</th>
+      <th>Event Name</th>
+      <th>Event Date</th>
+      <th>Hours Worked</th>
+      <th>Event Role</th>
+      <th>Organization Name</th>
+      <th>Sub-Organization Name</th>
       <th>Grade</th>
       <th colspan="3"></th>
     </tr>
@@ -30,7 +30,7 @@
         <td><%= events_person.Grade %></td>
         <td><%= link_to 'Show', events_person %></td>
         <td><%= link_to 'Edit', edit_events_person_path(events_person) %></td>
-        <td><%= link_to 'Destroy', events_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', events_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Events person', new_events_person_path %></button>
+<%= link_to 'New Events person', new_events_person_path, :class => "btn btn-add"%>

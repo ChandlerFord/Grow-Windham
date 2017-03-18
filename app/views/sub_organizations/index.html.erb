@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Organizationname</th>
-      <th>Suborganizationname</th>
+      <th>Organization Name</th>
+      <th>Sub-Organization Name</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -20,7 +20,7 @@
         <td><%= sub_organization.Description %></td>
         <td><%= link_to 'Show', sub_organization %></td>
         <td><%= link_to 'Edit', edit_sub_organization_path(sub_organization) %></td>
-        <td><%= link_to 'Destroy', sub_organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', sub_organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Sub organization', new_sub_organization_path %></button>
+<%= link_to 'New Sub organization', new_sub_organization_path, :class => "btn btn-add"%>

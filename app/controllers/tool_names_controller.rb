@@ -56,7 +56,7 @@ class ToolNamesController < ApplicationController
   def destroy
     @tool_name.destroy
     respond_to do |format|
-      format.html { redirect_to tool_names_url, notice: 'Tool name was successfully destroyed.' }
+      format.html { redirect_to tool_names_url, notice: 'Tool name was successfully removed.' }
       format.json { head :no_content }
     end
   end

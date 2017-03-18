@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Listtype</th>
-      <th>Listtypedescription</th>
+      <th>List Type</th>
+      <th>List Type Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= email_list_type.ListTypeDescription %></td>
         <td><%= link_to 'Show', email_list_type %></td>
         <td><%= link_to 'Edit', edit_email_list_type_path(email_list_type) %></td>
-        <td><%= link_to 'Destroy', email_list_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', email_list_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Email list type', new_email_list_type_path %></button>
+<%= link_to 'New Email list type', new_email_list_type_path, :class => "btn btn-add"%>

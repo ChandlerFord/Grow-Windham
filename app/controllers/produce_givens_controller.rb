@@ -15,10 +15,14 @@ class ProduceGivensController < ApplicationController
   # GET /produce_givens/new
   def new
     @produce_given = ProduceGiven.new
+    @crop_names = CropName.all
+    @how_givens = HowGiven.all
   end
 
   # GET /produce_givens/1/edit
   def edit
+    @crop_names = CropName.all
+    @how_givens = HowGiven.all
   end
 
   # POST /produce_givens
@@ -56,7 +60,7 @@ class ProduceGivensController < ApplicationController
   def destroy
     @produce_given.destroy
     respond_to do |format|
-      format.html { redirect_to produce_givens_url, notice: 'Produce given was successfully destroyed.' }
+      format.html { redirect_to produce_givens_url, notice: 'Produce given was successfully removed.' }
       format.json { head :no_content }
     end
   end

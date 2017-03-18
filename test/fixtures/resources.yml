@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ResourceName: MyText
+  TransactionDate: 2017-03-17
+  ResourceType: MyText
+  ResourceTransaction: MyText
+  MonetaryValue: 1
+  NonMonetaryValue: MyText
+  ResourcePersonalID: 1
+  ResourceOrganization: MyText
+  DestinationPersonalID: 1
+  DestinationOrganization: MyText
+  Description: MyText
+
+two:
+  ResourceName: MyText
+  TransactionDate: 2017-03-17
+  ResourceType: MyText
+  ResourceTransaction: MyText
+  MonetaryValue: 1
+  NonMonetaryValue: MyText
+  ResourcePersonalID: 1
+  ResourceOrganization: MyText
+  DestinationPersonalID: 1
+  DestinationOrganization: MyText
+  Description: MyText

@@ -56,7 +56,7 @@ class PersontTypesController < ApplicationController
   def destroy
     @persont_type.destroy
     respond_to do |format|
-      format.html { redirect_to persont_types_url, notice: 'Persont type was successfully destroyed.' }
+      format.html { redirect_to persont_types_url, notice: 'Persont type was successfully removed.' }
       format.json { head :no_content }
     end
   end

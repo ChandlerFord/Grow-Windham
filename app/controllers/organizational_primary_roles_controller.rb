@@ -56,7 +56,7 @@ class OrganizationalPrimaryRolesController < ApplicationController
   def destroy
     @organizational_primary_role.destroy
     respond_to do |format|
-      format.html { redirect_to organizational_primary_roles_url, notice: 'Organizational primary role was successfully destroyed.' }
+      format.html { redirect_to organizational_primary_roles_url, notice: 'Organizational primary role was successfully removed.' }
       format.json { head :no_content }
     end
   end

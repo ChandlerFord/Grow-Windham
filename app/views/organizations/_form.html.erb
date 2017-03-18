@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :OrganizationName %><br>
+    <%= f.label :OrganizationName, "Organization Name" %><br>
     <%= f.text_area :OrganizationName %>
   </div>
   <div class="field">
-    <%= f.label :OrganizationType %><br>
-    <%= f.text_area :OrganizationType %>
+    <%= f.label :OrganizationType, "Organization Type" %><br>
+    <%= f.select :OrganizationType, options_for_select(@organization_types.map{ |c| [c.OrganizationType] }), {include_blank: true} %>
   </div>
   <div class="actions">
     <%= f.submit %>

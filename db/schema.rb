@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217233619) do
+ActiveRecord::Schema.define(version: 20170318021326) do
+
+  create_table "adhoq_executions", force: :cascade do |t|
+    t.integer  "query_id",                            null: false
+    t.text     "raw_sql",                             null: false
+    t.string   "report_format",                       null: false
+    t.string   "status",        default: "requested", null: false
+    t.text     "log"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "adhoq_queries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.text     "query"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "adhoq_reports", force: :cascade do |t|
+    t.integer  "execution_id", null: false
+    t.string   "identifier",   null: false
+    t.time     "generated_at", null: false
+    t.string   "storage",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "adhoq_reports", ["execution_id"], name: "index_adhoq_reports_on_execution_id"
 
   create_table "crop_names", force: :cascade do |t|
     t.string   "CropName"
@@ -184,6 +213,34 @@ ActiveRecord::Schema.define(version: 20170217233619) do
     t.text     "ProgramDescription"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "resource_transactions", force: :cascade do |t|
+    t.text     "ResourceTransaction"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "resource_types", force: :cascade do |t|
+    t.text     "ResourceType"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.text     "ResourceName"
+    t.date     "TransactionDate"
+    t.text     "ResourceType"
+    t.text     "ResourceTransaction"
+    t.integer  "MonetaryValue"
+    t.text     "NonMonetaryValue"
+    t.integer  "ResourcePersonalID"
+    t.text     "ResourceOrganization"
+    t.integer  "DestinationPersonalID"
+    t.text     "DestinationOrganization"
+    t.text     "Description"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "sub_organizations", force: :cascade do |t|

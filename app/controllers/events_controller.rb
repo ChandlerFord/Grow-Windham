@@ -15,10 +15,16 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @gardens = Garden.all
+    @event_types = EventType.all
+    @programs = Program.all
   end
 
   # GET /events/1/edit
   def edit
+    @gardens = Garden.all
+    @event_types = EventType.all
+    @programs = Program.all
   end
 
   # POST /events
@@ -56,7 +62,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to events_url, notice: 'Event was successfully removed.' }
       format.json { head :no_content }
     end
   end

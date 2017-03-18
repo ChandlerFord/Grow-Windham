@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Toolname</th>
+      <th>Tool Name</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= tool_name.Description %></td>
         <td><%= link_to 'Show', tool_name %></td>
         <td><%= link_to 'Edit', edit_tool_name_path(tool_name) %></td>
-        <td><%= link_to 'Destroy', tool_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', tool_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Tool name', new_tool_name_path %></button>
+<%= link_to 'New Tool name', new_tool_name_path, :class => "btn btn-add"%>

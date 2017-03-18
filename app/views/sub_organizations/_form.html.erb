@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :OrganizationName %><br>
-    <%= f.text_area :OrganizationName %>
+    <%= f.label :OrganizationName, "Organization Name" %><br>
+    <%= f.select :OrganizationName, options_for_select(@organizations.map{ |c| [c.OrganizationName] }), {include_blank: true} %>
   </div>
   <div class="field">
-    <%= f.label :SubOrganizationName %><br>
+    <%= f.label :SubOrganizationNamem, "Sub-Organization Name" %><br>
     <%= f.text_area :SubOrganizationName %>
   </div>
   <div class="field">
-    <%= f.label :Description %><br>
+    <%= f.label :Description, "Description" %><br>
     <%= f.text_area :Description %>
   </div>
   <div class="actions">

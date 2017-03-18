@@ -1,0 +1,1 @@
+json.array! @resource_transactions, partial: 'resource_transactions/resource_transaction', as: :resource_transaction

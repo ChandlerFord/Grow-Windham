@@ -56,7 +56,7 @@ class OrganizationTypesController < ApplicationController
   def destroy
     @organization_type.destroy
     respond_to do |format|
-      format.html { redirect_to organization_types_url, notice: 'Organization type was successfully destroyed.' }
+      format.html { redirect_to organization_types_url, notice: 'Organization type was successfully removed.' }
       format.json { head :no_content }
     end
   end

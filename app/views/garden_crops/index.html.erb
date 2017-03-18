@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Gardenname</th>
-      <th>Cropname</th>
-      <th>Dateharvested</th>
-      <th>Poundsharvested</th>
+      <th>Garden Name</th>
+      <th>Crop Name</th>
+      <th>Date Harvested</th>
+      <th>Pounds Harvested</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
         <td><%= garden_crop.PoundsHarvested %></td>
         <td><%= link_to 'Show', garden_crop %></td>
         <td><%= link_to 'Edit', edit_garden_crop_path(garden_crop) %></td>
-        <td><%= link_to 'Destroy', garden_crop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', garden_crop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Garden crop', new_garden_crop_path %></button>
+<%= link_to 'New Garden crop', new_garden_crop_path, :class => "btn btn-add"%>

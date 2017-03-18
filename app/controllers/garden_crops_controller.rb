@@ -15,6 +15,8 @@ class GardenCropsController < ApplicationController
   # GET /garden_crops/new
   def new
     @garden_crop = GardenCrop.new
+    @crop_names = CropName.all
+    @gardens = Garden.all
   end
 
   # GET /garden_crops/1/edit
@@ -56,7 +58,7 @@ class GardenCropsController < ApplicationController
   def destroy
     @garden_crop.destroy
     respond_to do |format|
-      format.html { redirect_to garden_crops_url, notice: 'Garden crop was successfully destroyed.' }
+      format.html { redirect_to garden_crops_url, notice: 'Garden crop was successfully removed.' }
       format.json { head :no_content }
     end
   end

@@ -15,10 +15,22 @@ class EventsPeopleController < ApplicationController
   # GET /events_people/new
   def new
     @events_person = EventsPerson.new
+    @people = Person.all
+    @events = Event.all
+    @event_roles = EventRole.all
+    @sub_organizations = SubOrganization.all
+    @organizations = Organization.all
+    @grades = Grade.all
   end
 
   # GET /events_people/1/edit
   def edit
+    @people = Person.all
+    @events = Event.all
+    @event_roles = EventRole.all
+    @sub_organizations = SubOrganization.all
+    @organizations = Organization.all
+    @grades = Grade.all
   end
 
   # POST /events_people
@@ -56,7 +68,7 @@ class EventsPeopleController < ApplicationController
   def destroy
     @events_person.destroy
     respond_to do |format|
-      format.html { redirect_to events_people_url, notice: 'Events person was successfully destroyed.' }
+      format.html { redirect_to events_people_url, notice: 'Events person was successfully removed.' }
       format.json { head :no_content }
     end
   end

@@ -15,10 +15,12 @@ class SubOrganizationsController < ApplicationController
   # GET /sub_organizations/new
   def new
     @sub_organization = SubOrganization.new
+    @organizations = Organization.all
   end
 
   # GET /sub_organizations/1/edit
   def edit
+    @organizations = Organization.all
   end
 
   # POST /sub_organizations
@@ -56,7 +58,7 @@ class SubOrganizationsController < ApplicationController
   def destroy
     @sub_organization.destroy
     respond_to do |format|
-      format.html { redirect_to sub_organizations_url, notice: 'Sub organization was successfully destroyed.' }
+      format.html { redirect_to sub_organizations_url, notice: 'Sub organization was successfully removed.' }
       format.json { head :no_content }
     end
   end

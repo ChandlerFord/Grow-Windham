@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Gardenname</th>
-      <th>Toolname</th>
+      <th>Garden Name</th>
+      <th>Tool Name</th>
       <th>Count</th>
       <th colspan="3"></th>
     </tr>
@@ -20,7 +20,7 @@
         <td><%= garden_inventory.Count %></td>
         <td><%= link_to 'Show', garden_inventory %></td>
         <td><%= link_to 'Edit', edit_garden_inventory_path(garden_inventory) %></td>
-        <td><%= link_to 'Destroy', garden_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', garden_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Garden inventory', new_garden_inventory_path %></button>
+<%= link_to 'New Garden inventory', new_garden_inventory_path, :class => "btn btn-add"%>

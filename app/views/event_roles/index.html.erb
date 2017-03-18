@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Eventrole</th>
+      <th>Event Role</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= event_role.Description %></td>
         <td><%= link_to 'Show', event_role %></td>
         <td><%= link_to 'Edit', edit_event_role_path(event_role) %></td>
-        <td><%= link_to 'Destroy', event_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', event_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<button type="button"><%= link_to 'New Event role', new_event_role_path %></button>
+<%= link_to 'New Event role', new_event_role_path, :class => "btn btn-add"%>

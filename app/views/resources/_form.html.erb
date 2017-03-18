@@ -1,0 +1,61 @@
+<%= form_for(@resource) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+      <% @resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ResourceName %><br>
+    <%= f.text_area :ResourceName %>
+  </div>
+  <div class="field">
+    <%= f.label :TransactionDate %><br>
+    <%= f.date_select :TransactionDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ResourceType %><br>
+    <%= f.select :ResourceType, options_for_select(@resource_types.map{ |c| [c.ResourceType] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :ResourceTransaction %><br>
+    <%= f.select :ResourceTransaction, options_for_select(@resource_transactions.map{ |c| [c.ResourceTransaction] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :MonetaryValue %><br>
+    <%= f.number_field :MonetaryValue %>
+  </div>
+  <div class="field">
+    <%= f.label :NonMonetaryValue %><br>
+    <%= f.text_area :NonMonetaryValue %>
+  </div>
+  <div class="field">
+    <%= f.label :ResourcePersonalID %><br>
+    <%= f.select :ResourcePersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :ResourceOrganization %><br>
+    <%= f.select :ResourceOrganization, options_for_select(@organizations.map{ |c| [c.OrganizationName] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :DestinationPersonalID %><br>
+    <%= f.select :ResourcePersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :DestinationOrganization %><br>
+    <%= f.select :ResourceOrganization, options_for_select(@organizations.map{ |c| [c.OrganizationName] }), {include_blank: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

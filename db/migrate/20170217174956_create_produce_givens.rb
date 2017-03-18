@@ -6,6 +6,8 @@ class CreateProduceGivens < ActiveRecord::Migration
       t.text :HowGiven
       t.integer :PoundsGiven
       t.integer :ValueGiven
+      t.text :Proceeds
+      t.text :Notes
 
       t.timestamps null: false
     end

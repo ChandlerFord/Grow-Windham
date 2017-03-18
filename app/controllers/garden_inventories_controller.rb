@@ -15,10 +15,14 @@ class GardenInventoriesController < ApplicationController
   # GET /garden_inventories/new
   def new
     @garden_inventory = GardenInventory.new
+    @tool_names = ToolName.all
+    @gardens = Garden.all
   end
 
   # GET /garden_inventories/1/edit
   def edit
+    @tool_names = ToolName.all
+    @gardens = Garden.all
   end
 
   # POST /garden_inventories
@@ -56,7 +60,7 @@ class GardenInventoriesController < ApplicationController
   def destroy
     @garden_inventory.destroy
     respond_to do |format|
-      format.html { redirect_to garden_inventories_url, notice: 'Garden inventory was successfully destroyed.' }
+      format.html { redirect_to garden_inventories_url, notice: 'Garden inventory was successfully removed.' }
       format.json { head :no_content }
     end
   end

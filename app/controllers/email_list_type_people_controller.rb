@@ -6,7 +6,14 @@ class EmailListTypePeopleController < ApplicationController
   def index
     @email_list_type_people = EmailListTypePerson.all
   end
-
+  def export
+      @email_list = EailListTypePerson.order(:name)
+  respond_to do |format|
+    format.html
+    format.csv { send_data @email_list.to_csv }
+    format.xls { send_data @email_list.to_csv(col_sep: "\t") }
+  end
+  end
   # GET /email_list_type_people/1
   # GET /email_list_type_people/1.json
   def show
@@ -15,10 +22,14 @@ class EmailListTypePeopleController < ApplicationController
   # GET /email_list_type_people/new
   def new
     @email_list_type_person = EmailListTypePerson.new
+    @email_list_type = EmailListType.all 
+    @people = Person.all
   end
 
   # GET /email_list_type_people/1/edit
   def edit
+    @email_list_type = EmailListType.all
+    @people = Person.all
   end
 
   # POST /email_list_type_people
@@ -56,7 +67,7 @@ class EmailListTypePeopleController < ApplicationController
   def destroy
     @email_list_type_person.destroy
     respond_to do |format|
-      format.html { redirect_to email_list_type_people_url, notice: 'Email list type person was successfully destroyed.' }
+      format.html { redirect_to email_list_type_people_url, notice: 'Email list type person was successfully removed.' }
       format.json { head :no_content }
     end
   end
