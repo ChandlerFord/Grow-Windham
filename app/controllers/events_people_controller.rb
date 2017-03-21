@@ -32,7 +32,13 @@ class EventsPeopleController < ApplicationController
     @organizations = Organization.all
     @grades = Grade.all
   end
-
+  
+  def reportgen
+    @report = EventsPerson.find_by_sql("SELECT Events_People.PersonalID, People.LastName, People.FirstName, Events_People.EventRole, Events_People.HoursWorked, Events_People.OrganizationName, Events_People.SubOrganizationName, People.EmailAddress
+    FROM People INNER JOIN (Events INNER JOIN Events_People ON (Events.EventName = Events_People.EventName) AND (Events.EventDate = Events_People.EventDate)) ON People.PersonalID = Events_People.PersonalID")
+  #WHERE ((Events_People.EventName = SelectedEventName) AND  (Events_People.EventDate = SelectedEventDate));
+  end
+  
   # POST /events_people
   # POST /events_people.json
   def create

@@ -28,21 +28,29 @@ Rails.application.routes.draw do
   resources :email_list_type_people
   resources :email_list_types
   resources :crop_names
+
+  get 'pages/about_us'=> 'pages#about_us', as: 'about'
+  root 'pages#index'
+  
   mount Adhoq::Engine => "/adhoq"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-#Redirect user if signed in or not
-devise_scope :user do
-  authenticated :user do
-    root 'crop_names#new', as: :authenticated_root
-  end
 
-  unauthenticated do
-    root 'devise/sessions#new', as: :unauthenticated_root
-  end
-end
+
+#Redirect user if signed in or not
+#devise_scope :user do
+#  authenticated :user do
+#    root 'crop_names#new', as: :authenticated_root
+#  end
+
+#  unauthenticated do
+#    root 'devise/sessions#new', as: :unauthenticated_root
+#  end
+#end
+
+
 # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

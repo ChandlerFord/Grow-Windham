@@ -5,6 +5,7 @@ class GradesController < ApplicationController
   # GET /grades.json
   def index
     @grades = Grade.all
+    gradesearch = Grade.first
   end
 
   # GET /grades/1
