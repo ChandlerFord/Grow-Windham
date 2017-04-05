@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Garden Inventories</h1>
+<h1>Tools in Garden</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -19,13 +21,17 @@
         <td><%= garden_inventory.ToolName %></td>
         <td><%= garden_inventory.Count %></td>
         <td><%= link_to 'Show', garden_inventory %></td>
+        <% if can? :update, garden_inventory%>
         <td><%= link_to 'Edit', edit_garden_inventory_path(garden_inventory) %></td>
+        <% end %>
+        <% if can? :destroy, garden_inventory%>
         <td><%= link_to 'Remove', garden_inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Garden inventory', new_garden_inventory_path, :class => "btn btn-add"%>

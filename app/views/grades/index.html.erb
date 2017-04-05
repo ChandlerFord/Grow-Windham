@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Grades</h1>
+<h1>Grades</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= grade.Grade %></td>
         <td><%= grade.GradeDescription %></td>
         <td><%= link_to 'Show', grade %></td>
+        <% if can? :update, grade%>
         <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+        <% end %>
+        <% if can? :destroy, grade%>
         <td><%= link_to 'Remove', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Organizational Primary Roles</h1>
+<h1>Primary Roles Within the Organization</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,13 +19,17 @@
         <td><%= organizational_primary_role.PrimaryRole %></td>
         <td><%= organizational_primary_role.Description %></td>
         <td><%= link_to 'Show', organizational_primary_role %></td>
+        <% if can? :update, organizational_primary_role%>
         <td><%= link_to 'Edit', edit_organizational_primary_role_path(organizational_primary_role) %></td>
+        <% end %>
+        <% if can? :destroy, organizational_primary_role%>
         <td><%= link_to 'Remove', organizational_primary_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Organizational primary role', new_organizational_primary_role_path, :class => "btn btn-add"%>

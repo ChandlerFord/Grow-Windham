@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :GardenName, "Garden Name" %><br>
-    <%= f.select :GardenName, options_for_select(@gardens.map{ |c| [c.GardenName] }), {include_blank: true} %>
+    <%= f.select :GardenName, @gardens.map { |g| ["#{g.GardenName}"]}, {:prompt => 'Select Garden'} %>
   </div>
   <div class="field">
     <%= f.label :CropName, "Crop Name" %><br>

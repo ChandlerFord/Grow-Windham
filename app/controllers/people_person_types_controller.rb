@@ -10,6 +10,7 @@ class PeoplePersonTypesController < ApplicationController
   # GET /people_person_types/1
   # GET /people_person_types/1.json
   def show
+
   end
 
   # GET /people_person_types/new

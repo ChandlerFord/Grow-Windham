@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Event Types</h1>
+<h1>Event Types</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= event_type.EventType %></td>
         <td><%= event_type.Description %></td>
         <td><%= link_to 'Show', event_type %></td>
+        <% if can? :update, event_type%>
         <td><%= link_to 'Edit', edit_event_type_path(event_type) %></td>
+        <% end %>
+        <% if can? :destroy, event_type%>
         <td><%= link_to 'Remove', event_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

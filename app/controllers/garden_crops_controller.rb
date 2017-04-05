@@ -4,7 +4,7 @@ class GardenCropsController < ApplicationController
   # GET /garden_crops
   # GET /garden_crops.json
   def index
-    @garden_crops = GardenCrop.all
+    @garden_crops = GardenCrop.search(params[:search])
   end
 
   # GET /garden_crops/1

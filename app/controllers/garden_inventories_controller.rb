@@ -4,7 +4,7 @@ class GardenInventoriesController < ApplicationController
   # GET /garden_inventories
   # GET /garden_inventories.json
   def index
-    @garden_inventories = GardenInventory.all
+    @garden_inventories = GardenInventory.order("Count" => "desc")
   end
 
   # GET /garden_inventories/1

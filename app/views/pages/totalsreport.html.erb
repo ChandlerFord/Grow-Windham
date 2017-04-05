@@ -1,0 +1,60 @@
+<!DOCTPE html>
+<html>
+<head>
+	<title>
+	
+	</title>
+</head>
+<body>
+<h1>People</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:#597D59; padding:20px;">
+      <%= link_to(image_tag("personicon.png", :alt => "personicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Volunteers: </br></br><%= @people.count("Firstname") %></h3></strong>
+    </div>
+    <div class="col-sm-4" style="background-color:#E38109; padding:20px;"> 
+      <%= link_to(image_tag("clockicon.png", :alt => "clockicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Total Volunteer Hours: </br></br><%= @events_people.sum("HoursWorked") %></h3></strong>
+    </div>
+    <div class="col-sm-4" style="background-color:#597D59; padding:20px;"> 
+      <%= link_to(image_tag("clockicon.png", :alt => "clockicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Avg. Volunteer Hours: </br></br><%= @events_people.average("HoursWorked") %></h3></strong>
+    </div>
+  </div>
+  </br>
+  
+  <h1>Events</h1>
+  <div class="row">
+    <div class="col-sm-4" style="background-color:#E38109; padding:20px;"> 
+      <%= link_to(image_tag("programicon.png", :alt => "programicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Number of Programs: </br></br><%= @programs.count("ProgramName") %></h3></strong>
+    </div>
+    <div class="col-sm-4" style="background-color:#597D59; padding:17.5px;"> 
+      <%= link_to(image_tag("calendaricon.png", :alt => "calendaricon",:width =>'45px', :height => '55px')) %> </br>
+      <strong><h3>Number of Events: </br></br><%= @events.count("EventName") %></h3></strong>
+    </div>
+    <div class="col-sm-4" style="background-color:#E38109; padding:20px;"> 
+      <%= link_to(image_tag("clockicon.png", :alt => "clockicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Total Event Hours: </br></br><%= @events.sum("EventHours") %></h3></strong>
+    </div>
+  </div>
+  
+  </br>
+  
+  <h1>Gardens</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#597D59; padding:20px;">
+      <%= link_to(image_tag("gardenicon.png", :alt => "gardenicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Number of Gardens: </br></br><%= @gardens.count("GardenName") %></h3></strong>
+    </div>
+    <div class="col-sm-6" style="background-color:#E38109; padding:17.5px;"> 
+      <%= link_to(image_tag("carrotpic.png", :alt => "carrotpic",:width =>'45px', :height => '55px')) %> </br>
+      <strong><h3>Total Pounds Harvested: </br></br><%= @garden_crops.sum("PoundsHarvested") %></h3></strong>
+    </div>
+  </div>
+    
+</div>
+</body>
+</html>

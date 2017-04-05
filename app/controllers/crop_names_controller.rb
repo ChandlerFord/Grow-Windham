@@ -4,7 +4,7 @@ class CropNamesController < ApplicationController
   # GET /crop_names
   # GET /crop_names.json
   def index
-    @crop_names = CropName.all
+    @crop_names = CropName.order("CropName")
   end
 
   # GET /crop_names/1

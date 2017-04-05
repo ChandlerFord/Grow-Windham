@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing People Person Types</h1>
+<h1>Types of People</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= people_person_type.PersonalID %></td>
         <td><%= people_person_type.PersonType %></td>
         <td><%= link_to 'Show', people_person_type %></td>
+        <% if can? :update, people_person_type%>
         <td><%= link_to 'Edit', edit_people_person_type_path(people_person_type) %></td>
+        <% end %>
+        <% if can? :destroy, people_person_type%>
         <td><%= link_to 'Remove', people_person_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

@@ -4,8 +4,7 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Grade.all
-    gradesearch = Grade.first
+    @grades = Grade.order("Grade")
   end
 
   # GET /grades/1

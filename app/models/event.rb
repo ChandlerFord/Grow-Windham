@@ -3,4 +3,7 @@ class Event < ActiveRecord::Base
     has_many :gardens
     has_many :programs
     has_many :event_types
+    
+
+    
 end

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Produce Givens</h1>
+<h1>Produce Given</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -23,13 +25,17 @@
         <td><%= produce_given.PoundsGiven %></td>
         <td>$<%= produce_given.ValueGiven %></td>
         <td><%= link_to 'Show', produce_given %></td>
+        <% if can? :update, produce_given%>
         <td><%= link_to 'Edit', edit_produce_given_path(produce_given) %></td>
+        <% end %>
+        <% if can? :destroy, produce_given%>
         <td><%= link_to 'Remove', produce_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Produce given', new_produce_given_path, :class => "btn btn-add"%>

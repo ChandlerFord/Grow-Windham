@@ -4,7 +4,7 @@ class ToolNamesController < ApplicationController
   # GET /tool_names
   # GET /tool_names.json
   def index
-    @tool_names = ToolName.all
+    @tool_names = ToolName.order("ToolName")
   end
 
   # GET /tool_names/1

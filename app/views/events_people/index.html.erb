@@ -1,11 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events People</h1>
+<h1>People At Each Event</h1>
+
+
+<%= form_tag events_people_path, :method => 'get' do %>
+  <p>
+    Search by Event Name: 
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :EventName => nil, :class => "btn btn-add"  %>
+    <%=link_to 'Reset', events_people_url, :class => "btn btn-download"%>
+  </p>
+<% end %>
+
+<%= form_tag events_people_path, :method => 'get' do %>
+  <p>
+    Search By PersonalID: 
+    <%= text_field_tag :personsearch, params[:personsearch] %>
+    <%= submit_tag "Search", :PersonalID => nil, :class => "btn btn-add"  %>
+    <%=link_to 'Reset', events_people_url, :class => "btn btn-download"%>
+  </p>
+<% end %>
+
+<div class="table-responsive">
 
 <table>
   <thead>
     <tr>
       <th>Personal ID</th>
+      <th>Person Name</th>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Hours Worked</th>
@@ -21,6 +43,7 @@
     <% @events_people.each do |events_person| %>
       <tr>
         <td><%= events_person.PersonalID %></td>
+        <td><%= Person.where(:id => events_person.PersonalID).pluck(:Firstname, :LastName).flatten%></td>
         <td><%= events_person.EventName %></td>
         <td><%= events_person.EventDate %></td>
         <td><%= events_person.HoursWorked %></td>
@@ -29,13 +52,20 @@
         <td><%= events_person.SubOrganizationName %></td>
         <td><%= events_person.Grade %></td>
         <td><%= link_to 'Show', events_person %></td>
+        <% if can? :update, events_person%>
         <td><%= link_to 'Edit', edit_events_person_path(events_person) %></td>
+        <% end %>
+        <% if can? :destroy, events_person%>
         <td><%= link_to 'Remove', events_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+<p>Total Hours: <%= @events_people.sum("HoursWorked") %></p>
 <br>
 
 <%= link_to 'New Events person', new_events_person_path, :class => "btn btn-add"%>
+
+

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Email List Type People</h1>
+<h1>Listing People by Email Type</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,13 +19,18 @@
         <td><%= email_list_type_person.PersonalID %></td>
         <td><%= email_list_type_person.EmailListType %></td>
         <td><%= link_to 'Show', email_list_type_person %></td>
+        <% if can? :update, email_list_type_person%>
         <td><%= link_to 'Edit', edit_email_list_type_person_path(email_list_type_person) %></td>
+        <% end %>
+        <% if can? :destroy, email_list_type_person%>
         <td><%= link_to 'Remove', email_list_type_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Email list type person', new_email_list_type_person_path, :class => "btn btn-add"%>
+<%= link_to 'Export Spreadsheet', email_list_type_people_path(format: "csv"), :class => "btn btn-download"%>

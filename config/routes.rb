@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources :persont_types
   resources :people_person_types
   resources :people_organizations
-  resources :people
+  resources :people do
+    collection {post :import}
+  end
   resources :organization_types
   resources :organizations
   resources :how_givens
@@ -29,6 +31,9 @@ Rails.application.routes.draw do
   resources :email_list_types
   resources :crop_names
 
+  get 'pages/totalsreport'=> 'pages#totalsreport', as: 'totals'
+  get 'pages/accessdenied'=> 'pages#accessdenied', as: 'accessdenied'
+  
   get 'pages/about_us'=> 'pages#about_us', as: 'about'
   root 'pages#index'
   

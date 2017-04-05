@@ -2,6 +2,16 @@
 
 <h1>Listing People Organizations</h1>
 
+<%= form_tag people_organizations_path, :method => 'get' do %>
+  <p>Search by OrganizationName: 
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :OrganizationName => nil, :class => "btn btn-add"  %>
+    <%=link_to 'Reset', people_organizations_url, :class => "btn btn-download"%>
+  </p>
+<% end %>
+
+<div class="table-responsive">
+
 <table>
   <thead>
     <tr>
@@ -17,12 +27,17 @@
         <td><%= people_organization.PersonalID %></td>
         <td><%= people_organization.OrganizationName %></td>
         <td><%= link_to 'Show', people_organization %></td>
+        <% if can? :update, people_organization%>
         <td><%= link_to 'Edit', edit_people_organization_path(people_organization) %></td>
+        <% end %>
+        <% if can? :destroy, people_organization%>
         <td><%= link_to 'Remove', people_organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

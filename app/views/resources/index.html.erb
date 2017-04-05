@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resources</h1>
+<h1>Resources</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -35,12 +37,17 @@
         <td><%= resource.DestinationOrganization %></td>
         <td><%= resource.Description %></td>
         <td><%= link_to 'Show', resource %></td>
+        <% if can? :update, resource%>
         <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <% end %>
+        <% if can? :destroy, resource%>
         <td><%= link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

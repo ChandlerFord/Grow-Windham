@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Organizations</h1>
+<h1>Organizations</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= organization.OrganizationName %></td>
         <td><%= organization.OrganizationType %></td>
         <td><%= link_to 'Show', organization %></td>
+        <% if can? :update, organization%>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+        <% end %>
+        <% if can? :destroy, organization%>
         <td><%= link_to 'Remove', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

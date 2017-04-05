@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing User Roles</h1>
+<h1>User Roles</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= user_role.UserRole %></td>
         <td><%= user_role.UserRoleDescription %></td>
         <td><%= link_to 'Show', user_role %></td>
+        <% if can? :update, user_role%>
         <td><%= link_to 'Edit', edit_user_role_path(user_role) %></td>
+        <% end %>
+        <% if can? :destroy, user_role%>
         <td><%= link_to 'Remove', user_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

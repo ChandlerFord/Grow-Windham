@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Email List Types</h1>
+<h1>Email List Types</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,13 +19,17 @@
         <td><%= email_list_type.ListType %></td>
         <td><%= email_list_type.ListTypeDescription %></td>
         <td><%= link_to 'Show', email_list_type %></td>
+        <% if can? :update, email_list_type%>
         <td><%= link_to 'Edit', edit_email_list_type_path(email_list_type) %></td>
+        <% end %>
+        <% if can? :destroy, email_list_type%>
         <td><%= link_to 'Remove', email_list_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Email list type', new_email_list_type_path, :class => "btn btn-add"%>

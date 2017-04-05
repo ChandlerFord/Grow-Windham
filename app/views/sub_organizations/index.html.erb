@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sub Organizations</h1>
+<h1>Sub-Organizations</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -19,12 +21,17 @@
         <td><%= sub_organization.SubOrganizationName %></td>
         <td><%= sub_organization.Description %></td>
         <td><%= link_to 'Show', sub_organization %></td>
+        <% if can? :update, sub_organization%>
         <td><%= link_to 'Edit', edit_sub_organization_path(sub_organization) %></td>
+        <% end %>
+        <% if can? :destroy, sub_organization%>
         <td><%= link_to 'Remove', sub_organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

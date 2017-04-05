@@ -4,16 +4,14 @@ class EmailListTypePeopleController < ApplicationController
   # GET /email_list_type_people
   # GET /email_list_type_people.json
   def index
-    @email_list_type_people = EmailListTypePerson.all
+    @email_list_type_people = EmailListTypePerson.order(:PersonalID)
+      respond_to do |format|
+        format.html
+        format.csv { render text: @email_list_type_people.to_csv}
+    end
   end
-  def export
-      @email_list = EailListTypePerson.order(:name)
-  respond_to do |format|
-    format.html
-    format.csv { send_data @email_list.to_csv }
-    format.xls { send_data @email_list.to_csv(col_sep: "\t") }
-  end
-  end
+      
+
   # GET /email_list_type_people/1
   # GET /email_list_type_people/1.json
   def show

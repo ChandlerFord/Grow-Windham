@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Programs</h1>
+<h1>Programs</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -21,13 +23,17 @@
         <td><%= program.ProgramEndDate %></td>
         <td><%= program.ProgramDescription %></td>
         <td><%= link_to 'Show', program %></td>
+        <% if can? :update, program%>
         <td><%= link_to 'Edit', edit_program_path(program) %></td>
+        <% end %>
+        <% if can? :destroy, program%>
         <td><%= link_to 'Remove', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Program', new_program_path, :class => "btn btn-add"%>

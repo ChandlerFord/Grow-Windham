@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Gardens</h1>
+<h1>Gardens</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= garden.GardenName %></td>
         <td><%= garden.GardenLocation %></td>
         <td><%= link_to 'Show', garden %></td>
+        <% if can? :update, garden%>
         <td><%= link_to 'Edit', edit_garden_path(garden) %></td>
+        <% end %>
+        <% if can? :destroy, garden%>
         <td><%= link_to 'Remove', garden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

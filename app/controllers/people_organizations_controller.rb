@@ -4,7 +4,7 @@ class PeopleOrganizationsController < ApplicationController
   # GET /people_organizations
   # GET /people_organizations.json
   def index
-    @people_organizations = PeopleOrganization.all
+    @people_organizations = PeopleOrganization.search(params[:search]).order("OrganizationName")
   end
 
   # GET /people_organizations/1

@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @search = EventSearch.new(params[:search])
+    @events = @search.scope.order("EventDate")
   end
 
   # GET /events/1

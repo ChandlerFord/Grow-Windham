@@ -31,10 +31,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-             				<li><a href="">Events During Period</a></li>
 								<li><a href="">Program Events</a></li>
 								<li><a href="">Event People</a></li>
-								<li><a href="">Export Email List</a></li>
 								<li><a href="">Organization People</a></li>
 								<li><a href="">Partner Organizations</a></li>
 								<li><%= link_to 'Garden Crops', page_path('GardenCrops') %></li>
@@ -43,9 +41,7 @@
 								<li><a href="">Volunteer Report</a></li>
 								<li><a href="">Volunteer Role</a></li>
 								<li><a href="">Unique Volunteers</a></li>
-								<li><a href="">Totals Reports</a></li>
-								<li><%= link_to 'AdhocReporting', page_path('AdhocReporting') %></li>
-								<li><%= link_to 'Home', page_path('Home') %></li>
+								<li><%= link_to 'Totals Report', totals_path %></li>
                 </ul>
             </li>
             
@@ -59,7 +55,7 @@
 							<li><%= link_to 'Sub Organization',sub_organizations_url %></li>
 							<li><%= link_to 'Programs', programs_url %></li>
 							<li><%= link_to 'Crop Name', crop_names_url %></li>
-							<li><%= link_to 'Crop Destination', produce_givens_url %></li>
+							<li><%= link_to 'Produce Given', produce_givens_url %></li>
 							<li><%= link_to 'How Given', how_givens_url %></li>
 							<li><%= link_to 'Tool Names', tool_names_url %></li>
 							<li><%= link_to 'Person Types', persont_types_url %></li>
@@ -77,7 +73,7 @@
 						 <li><%= link_to 'Resource Transaction', resource_transactions_url %></li>      	
                 </ul>
             </li>
-            
+            <% if current_user.try(:admin?) %>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Mgmt<span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -85,4 +81,5 @@
     					<li><%= link_to 'User Management', users_url %></li>	
                 </ul>
             </li>
+            <% end %>
             </ul>

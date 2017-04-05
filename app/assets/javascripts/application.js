@@ -17,6 +17,8 @@
 //= require query-builder
 //= require turbolinks
 //= require_tree .
+//
+//= require filterrific/filterrific-jquery
 
 
 var rules_widgets = {

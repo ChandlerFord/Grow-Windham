@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Event Roles</h1>
+<h1>Event Roles</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,13 +19,17 @@
         <td><%= event_role.EventRole %></td>
         <td><%= event_role.Description %></td>
         <td><%= link_to 'Show', event_role %></td>
+        <% if can? :update, event_role%>
         <td><%= link_to 'Edit', edit_event_role_path(event_role) %></td>
+        <% end %>
+        <% if can? :destroy, event_role%>
         <td><%= link_to 'Remove', event_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Event role', new_event_role_path, :class => "btn btn-add"%>

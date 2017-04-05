@@ -4,12 +4,14 @@ class EventsPeopleController < ApplicationController
   # GET /events_people
   # GET /events_people.json
   def index
-    @events_people = EventsPerson.all
+    @events_people = EventsPerson.search(params[:search]).order("EventName")
+    @events_people = EventsPerson.personsearch(params[:personsearch])
   end
 
   # GET /events_people/1
   # GET /events_people/1.json
   def show
+    @people = Person.all
   end
 
   # GET /events_people/new
@@ -31,12 +33,6 @@ class EventsPeopleController < ApplicationController
     @sub_organizations = SubOrganization.all
     @organizations = Organization.all
     @grades = Grade.all
-  end
-  
-  def reportgen
-    @report = EventsPerson.find_by_sql("SELECT Events_People.PersonalID, People.LastName, People.FirstName, Events_People.EventRole, Events_People.HoursWorked, Events_People.OrganizationName, Events_People.SubOrganizationName, People.EmailAddress
-    FROM People INNER JOIN (Events INNER JOIN Events_People ON (Events.EventName = Events_People.EventName) AND (Events.EventDate = Events_People.EventDate)) ON People.PersonalID = Events_People.PersonalID")
-  #WHERE ((Events_People.EventName = SelectedEventName) AND  (Events_People.EventDate = SelectedEventDate));
   end
   
   # POST /events_people

@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :ResourcePersonalID %><br>
-    <%= f.select :ResourcePersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
+    <%= f.select :ResourcePersonalID, @people.map { |p| ["#{p.Firstname} #{p.LastName}", p.id] }, {:prompt => 'Select Person'} %>
   </div>
   <div class="field">
     <%= f.label :ResourceOrganization %><br>
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :DestinationPersonalID %><br>
-    <%= f.select :ResourcePersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
+    <%= f.select :DestinationPersonalID, @people.map { |p| ["#{p.Firstname} #{p.LastName}", p.id] }, {:prompt => 'Select Person'} %>
   </div>
   <div class="field">
     <%= f.label :DestinationOrganization %><br>

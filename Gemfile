@@ -30,6 +30,11 @@ gem 'jquery_query_builder-rails'
 gem 'fat_fingers'
 gem 'high_voltage', '~> 3.0.0'
 
+#User roles
+gem 'cancan'
+
+gem 'filterrific'
+
 # Use Unicorn as the app server
 gem 'puma'
 

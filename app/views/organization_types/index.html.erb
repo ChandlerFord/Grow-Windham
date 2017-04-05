@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Organization Types</h1>
+<h1>Types of Organizations</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,13 +19,17 @@
         <td><%= organization_type.OrganizationType %></td>
         <td><%= organization_type.OrganizationTypeDescription %></td>
         <td><%= link_to 'Show', organization_type %></td>
+        <% if can? :update, organization_type%>
         <td><%= link_to 'Edit', edit_organization_type_path(organization_type) %></td>
+        <% end %>
+        <% if can? :destroy, organization_type%>
         <td><%= link_to 'Remove', organization_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Organization type', new_organization_type_path, :class => "btn btn-add"%>

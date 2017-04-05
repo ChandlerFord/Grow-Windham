@@ -4,7 +4,7 @@ class ResourceTypesController < ApplicationController
   # GET /resource_types
   # GET /resource_types.json
   def index
-    @resource_types = ResourceType.all
+    @resource_types = ResourceType.order("ResourceType")
   end
 
   # GET /resource_types/1

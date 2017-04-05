@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resource Types</h1>
+<h1>Resource Type</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -15,13 +17,17 @@
       <tr>
         <td><%= resource_type.ResourceType %></td>
         <td><%= link_to 'Show', resource_type %></td>
+        <% if can? :update, resource_type%>
         <td><%= link_to 'Edit', edit_resource_type_path(resource_type) %></td>
+        <% end %>
+        <% if can? :destroy, resource_type%>
         <td><%= link_to 'Remove', resource_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Resource type', new_resource_type_path, :class => "btn btn-add" %>

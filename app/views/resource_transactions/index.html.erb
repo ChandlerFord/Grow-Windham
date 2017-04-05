@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resource Transactions</h1>
+<h1>Resource Transactions</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -15,12 +17,17 @@
       <tr>
         <td><%= resource_transaction.ResourceTransaction %></td>
         <td><%= link_to 'Show', resource_transaction %></td>
+        <% if can? :update, resource_transaction%>
         <td><%= link_to 'Edit', edit_resource_transaction_path(resource_transaction) %></td>
+        <% end %>
+        <% if can? :destroy, resource_transaction%>
         <td><%= link_to 'Remove', resource_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

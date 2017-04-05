@@ -59,14 +59,40 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#597D59; padding:20px;"> 
+      <%= link_to(image_tag("clockicon.png", :alt => "clockicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Total Event Hours: </br></br><%= @events.sum("EventHours") %></h3></strong>
+    </div>
+    <div class="col-sm-6" style="background-color:#E38109; padding:20px;">
+      <%= link_to(image_tag("personicon.png", :alt => "personicon",:width =>'40px', :height => '50px')) %> </br>
+      <strong><h3>Volunteers: </br></br><%= @people.count("Firstname") %></h3></strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#E38109; padding:20px;"> 
+      <%= link_to(image_tag("houseicon.png", :alt => "house1",:width =>'45px', :height => '55px')) %> </br>
+      <strong><h3>Total Organizations: </br></br><%= @organizations.count("OrganizationName") %></h3></strong>
+    </div>
+    <div class="col-sm-6" style="background-color:#597D59; padding:20px;"> 
+      <%= link_to(image_tag("carrotpic.png", :alt => "house1",:width =>'45px', :height => '55px')) %> </br>
+      <strong><h3>Total Pounds Harvested: </br></br><%= @garden_crops.sum("PoundsHarvested") %></h3></strong>
+    </div>
+</div>
+
+
 <footer>
-	<h5>872 Main Street, Willimantic, CT 06226
-    (860) 423-4534 x328 / info@growwindham.org</h5><br>
+	<br>
     <p>
     	<%= link_to(image_tag("americorps_vista_jpg.jpg", :alt => "image", :width => 100, :height => 100)) %>
     	<%= link_to(image_tag("FoodCorps-Connecticut-Logo.png", :alt => "image", :width => 100, :height => 100)) %></br>
     	</br><a href="https://squareup.com/store/GROW-Windham-Willi-market"><button class="btn-lg btn-success">Donate</button></a>
     </p>
+    </br>
+    <h5>872 Main Street, Willimantic, CT 06226
+    (860) 423-4534 x328 / info@growwindham.org</h5>
 </footer>
 </body>
 </html>

@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :PersonalID, "Personal ID" %><br>
-    <%= f.select :PersonalID, options_for_select(@people.map{ |c| [c.PersonalID] }), {include_blank: true} %>
+    <%= f.select :PersonalID, @people.map { |p| ["#{p.Firstname} #{p.LastName}", p.id] }, {:prompt => 'Select Person'} %>
   </div>
   <div class="field">
     <%= f.label :EmailListType, "Email List Type" %><br>

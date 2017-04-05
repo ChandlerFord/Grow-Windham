@@ -4,21 +4,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.order("admin" => "desc")
+    authorize! :update, @user
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    authorize! :update, @user
   end
 
   # GET /users/new
   def new
     @user = User.new
+    authorize! :update, @user
   end
 
   # GET /users/1/edit
   def edit
+    authorize! :update, @user
   end
 
   # POST /users
@@ -69,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:UserID, :PersonalID, :UserRole)
+      params.require(:user).permit(:email, :admin)
     end
 end

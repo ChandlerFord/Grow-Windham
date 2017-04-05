@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tool Names</h1>
+<h1>Tool Names</h1>
+
+<div class="table-responsive">
 
 <table>
   <thead>
@@ -17,12 +19,17 @@
         <td><%= tool_name.ToolName %></td>
         <td><%= tool_name.Description %></td>
         <td><%= link_to 'Show', tool_name %></td>
+        <% if can? :update, tool_name%>
         <td><%= link_to 'Edit', edit_tool_name_path(tool_name) %></td>
+        <% end %>
+        <% if can? :destroy, tool_name%>
         <td><%= link_to 'Remove', tool_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
