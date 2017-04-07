@@ -30,8 +30,6 @@ gem 'jquery_query_builder-rails'
 gem 'fat_fingers'
 gem 'high_voltage', '~> 3.0.0'
 
-gem 'activerecord-postgresql-adapter', '~> 0.0.1'
-
 #User roles
 gem 'cancan'
 
@@ -56,4 +54,5 @@ group :development do
   gem 'rails_layout'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'activerecord-postgresql-adapter', '~> 0.0.1'
 end
