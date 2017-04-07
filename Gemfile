@@ -54,5 +54,8 @@ group :development do
   gem 'rails_layout'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
   gem 'activerecord-postgresql-adapter', '~> 0.0.1'
 end
