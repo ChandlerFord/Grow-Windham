@@ -32,8 +32,6 @@ GEM
       activemodel (= 4.2.5)
       activesupport (= 4.2.5)
       arel (~> 6.0)
-    activerecord-postgresql-adapter (0.0.1)
-      pg
     activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -363,7 +361,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgresql-adapter (~> 0.0.1)
   adhoq
   better_errors
   byebug
@@ -376,6 +373,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery_query_builder-rails
+  pg
   puma
   quiet_assets
   rails (= 4.2.5)

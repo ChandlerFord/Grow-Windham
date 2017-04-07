@@ -45,7 +45,6 @@ gem 'rails_12factor'#for heroku platform features
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -54,8 +53,9 @@ group :development do
   gem 'rails_layout'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'sqlite3'
 end
 
 group :production do
-  gem 'activerecord-postgresql-adapter', '~> 0.0.1'
+  gem 'pg'
 end
