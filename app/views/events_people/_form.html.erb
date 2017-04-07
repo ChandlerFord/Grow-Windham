@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :PersonalID, "Person Name" %><br>
+    <%= f.label :PersonalID, "PersonalID" %><br>
     <%= f.select :PersonalID, @people.map { |p| ["#{p.Firstname} #{p.LastName}", p.id] }, {:prompt => 'Select Person'} %>
   </div>
   <div class="field">

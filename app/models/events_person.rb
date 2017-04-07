@@ -5,8 +5,8 @@ class EventsPerson < ActiveRecord::Base
     has_many :sub_organizations
     has_many :organizations
     
-    def self.search(params)
-        if params
+    def self.search(search)
+        if search
             where('EventName LIKE ?', "%#{search}%")
         else
             all

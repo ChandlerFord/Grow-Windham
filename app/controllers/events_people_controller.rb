@@ -5,7 +5,6 @@ class EventsPeopleController < ApplicationController
   # GET /events_people.json
   def index
     @events_people = EventsPerson.search(params[:search]).order("EventName")
-    @events_people = EventsPerson.personsearch(params[:personsearch])
   end
 
   # GET /events_people/1
